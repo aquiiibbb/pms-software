@@ -1,0 +1,355 @@
+:root {
+  --primary-color: #002D62;    
+  --logo-orange: #C48323;      
+  --text-dark: #001A3F;        
+  --text-light: #6A7C92;       
+  --bg-main: #F4F7FA;          
+  --bg-card: #FFFFFF;          
+  --border-color: #DCE3EC;     
+  --disabled-bg: #F5F7FA;      
+  --success-green: #24A148;    
+  --required-color: #dc3545;
+}
+
+body {
+  background-color: var(--bg-main);
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 10px;
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased;
+}
+
+.walkin-container {
+  max-width: 1140px; /* फॉर्म की चौड़ाई थोड़ी कम की */
+  margin: 0 auto;
+}
+
+/* --- HEADER SECTION --- */
+.walkin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.key-logo {
+  display: flex;
+  align-items: center;
+  font-size: 36px; /* लोगो छोटा किया */
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.key-icon {
+  font-size: 38px;
+  margin-right: 6px;
+}
+
+.brand-inn { color: var(--primary-color); }
+.brand-out { color: var(--logo-orange); }
+
+.header-title h1 {
+  margin: 0;
+  font-size: 26px; /* हेडिंग छोटी की */
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.subtitle {
+  margin: 2px 0 0 0;
+  color: var(--text-light);
+  font-size: 13px;
+}
+
+/* --- FORM CARDS (Compact) --- */
+.form-card {
+  background: var(--bg-card);
+  border-radius: 10px;
+  padding: 16px 24px; /* पैडिंग कम की */
+  margin-bottom: 9px; /* कार्ड्स के बीच का गैप कम किया */
+  box-shadow: 0 2px 6px rgba(0, 45, 98, 0.02);
+  border: 1px solid rgba(220, 227, 236, 0.8);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.card-icon {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background-color: #EDF2F9;
+  border-radius: 6px;
+  color: var(--primary-color);
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 16px; /* सेक्शन हेडिंग साइज कम किया */
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+/* --- COMPACT GRIDS --- */
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.grid-5-room {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.grid-4-payment {
+  display: grid;
+  grid-template-columns: 1.2fr 1.2fr 1.2fr 2.4fr;
+  gap: 12px;
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
+/* --- COMPACT INPUTS --- */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 12px; /* लेबल्स छोटे किए */
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+select {
+  height: 38px; /* इनपुट की हाइट छोटी की (Perfect Size) */
+  padding: 0 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 13px; /* टेक्स्ट साइज छोटा किया */
+  color: var(--text-dark);
+  background-color: #FFFFFF;
+  outline: none;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+input::placeholder {
+  color: #A0AEC0;
+}
+
+input:focus, select:focus {
+  border-color: #A0B2C6;
+}
+
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a5568' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 11px;
+  padding-right: 30px;
+}
+
+.disabled-field input {
+  background-color: var(--disabled-bg);
+  color: #556B83;
+  cursor: not-allowed;
+}
+
+/* --- PREFIX & ICONS --- */
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input-wrapper .input-icon {
+  position: absolute;
+  left: 12px;
+  font-size: 14px;
+  color: #718096;
+}
+
+.icon-input input {
+  padding-left: 34px;
+}
+
+.currency-prefix {
+  position: absolute;
+  left: 12px;
+  font-size: 13px;
+  color: #4A5568;
+}
+
+.prefix-input input {
+  padding-left: 28px;
+}
+
+.suffix-input input {
+  padding-right: 26px;
+}
+
+.currency-suffix {
+  position: absolute;
+  right: 12px;
+  font-size: 13px;
+  color: #4A5568;
+}
+
+.total-field input {
+  font-weight: 700;
+  color: var(--text-dark, #1A202C);
+}
+
+/* Status Dot */
+.select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.status-dot {
+  position: absolute;
+  left: 12px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.status-paid .status-dot {
+  background-color: var(--success-green);
+}
+
+.status-paid select {
+  padding-left: 28px;
+}
+
+/* --- COMPACT BUTTONS --- */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 4px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  height: 36px; /* बटन साइज छोटा किया */
+  padding: 0 20px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-sizing: border-box;
+}
+
+.btn-secondary {
+  background-color: #FFFFFF;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  color: #FFFFFF;
+}
+
+.btn-primary:hover {
+  background-color: #001F44;
+}
+
+/* --- Embedded (inside calendar modal) tweaks --- */
+.walkin-embedded {
+  max-width: 100%;
+}
+.walkin-embedded .form-card {
+  box-shadow: none;
+}
+
+/* --- Guest count (adults/children side by side) --- */
+.guest-count-row {
+  display: flex;
+  gap: 8px;
+}
+.guest-count-row select {
+  flex: 1;
+}
+
+/* --- Stay summary line --- */
+.stay-summary {
+  margin: 10px 0 0;
+  font-size: 12px;
+  color: var(--text-light);
+}
+
+/* --- Payment status colors --- */
+.status-select input {
+  font-weight: 600;
+}
+.status-paid .status-dot { background-color: var(--success-green); }
+.status-paid select, .status-paid input { padding-left: 28px; }
+.status-partial .status-dot { background-color: #d9a441; }
+.status-partial select, .status-partial input { padding-left: 28px; }
+.status-pending .status-dot { background-color: var(--required-color); }
+.status-pending select, .status-pending input { padding-left: 28px; }
+
+/* --- Form messages --- */
+.walkin-message {
+  margin: 10px 2px 0;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+.walkin-error {
+  color: #b91c1c;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+}
+.walkin-success {
+  color: #15803d;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .grid-4, .grid-5, .grid-5-room, .grid-4-payment {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .grid-4, .grid-5, .grid-5-room, .grid-4-payment {
+    grid-template-columns: 1fr;
+  }
+}
